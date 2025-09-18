@@ -8,7 +8,7 @@ body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Ro
 .container{max-width:1080px;margin:0 auto;padding:24px}
 .header{display:flex;align-items:center;gap:18px}
 .logo-wrap{display:flex;align-items:center;justify-content:center;height:72px;width:140px;background:#fff;border:2.5px solid #0b1726;border-radius:16px;box-shadow:0 2px 0 #0b1726}
-.logo{height:48px;width:auto}
+.logo{height:70px;width:auto}
 nav{margin-left:auto}
 nav a{color:#0b1726;text-decoration:underline;font-weight:800;margin:0 12px}
 
@@ -33,7 +33,12 @@ nav a{color:#0b1726;text-decoration:underline;font-weight:800;margin:0 12px}
 .phone{margin:30px auto;max-width:720px}
 .phone-frame{border:16px solid #0b1726;border-radius:36px;background:#fff;}
 .phone-inner{height:560px;display:grid;place-items:center}
-.phone-inner .logo{height:28px;margin-top:16px}
+.phone-inner .logo {
+  height:120px;
+  width:auto;
+  display:block;
+  margin:0 auto 20px auto;
+}
 
 
 /* Waitlist form */
@@ -65,4 +70,5 @@ footer{color:#0b1726;opacity:.9;text-align:center;padding:36px 0}
 @media (max-width: 560px){
 nav{display:flex;flex-wrap:wrap;gap:10px}
 .feature-row{grid-template-columns:1fr}
+
 }
