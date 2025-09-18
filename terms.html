@@ -1,55 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Terms of Service · LandscAIpe</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 40px; line-height: 1.6; max-width: 900px; }
-    h1 { font-size: 2rem; margin-bottom: .25rem; }
-    .muted { color:#555; }
-    a { color:#0366d6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { margin-bottom: 2rem; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terms of Service — LandscAIpe</title>
+<link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<header>
-  <h1>Terms of Service</h1>
-  <div class="muted">Last Updated: September 17, 2025</div>
+<div class="container">
+<header class="header">
+<div class="logo-wrap"><img class="logo" src="/assets/landscaipe-logo.png" alt="LandscAIpe" /></div>
+<nav>
+<a href="/index.html">Home</a>
+<a href="/waitlist.html">Join Waitlist</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms of Service</a>
+</nav>
 </header>
 
-<p>These Terms of Service (“Terms”) govern your use of the LandscAIpe mobile application, operated by LANDSCAIPE LLC (“we,” “our,” or “us”). By using the app, you agree to these Terms.</p>
 
-<h2>1. Services Provided</h2>
-<p>LandscAIpe provides AI-generated landscaping cost estimates, design suggestions, and optional connections to contractors.</p>
-
-<h2>2. Estimates &amp; Accuracy</h2>
-<p>Estimates are for informational purposes only and are not binding quotes. Actual costs may vary.</p>
-
-<h2>3. Contractors</h2>
-<p>Contractors introduced through the app are independent third parties. LANDSCAIPE LLC is not responsible for their work, pricing, schedules, or disputes. Any agreements are solely between you and the contractor.</p>
-
-<h2>4. User Responsibilities</h2>
+<main class="policy card round-xl">
+<h1>Terms of Service</h1>
+<p class="meta">Last Updated: <span id="tosDate"></span></p>
+<ol>
+<li><strong>Services Provided</strong> — LandscAIpe provides AI‑generated landscaping cost estimates, design suggestions, and optional connections to contractors.</li>
+<li><strong>Estimates & Accuracy</strong> — Estimates are for informational purposes only and are not binding quotes. Actual costs may vary.</li>
+<li><strong>Contractors</strong> — Contractors introduced through the app are independent third parties; LandscAIpe LLC is not responsible for their work or pricing.</li>
+<li><strong>User Responsibilities</strong>
 <ul>
-  <li>Provide accurate project information.</li>
-  <li>Use the app lawfully and do not attempt to disrupt services.</li>
+<li>Provide accurate project information.</li>
+<li>Use the app lawfully and do not attempt to disrupt services.</li>
 </ul>
+</li>
+<li><strong>Termination</strong> — We may suspend or terminate access if you violate these Terms.</li>
+<li><strong>Limitation of Liability</strong> — To the maximum extent permitted by law, LandscAIpe LLC is not liable for indirect or consequential damages.</li>
+<li><strong>Governing Law</strong> — These Terms are governed by the laws of the State of Oregon, USA.</li>
+<li><strong>Contact</strong> — Email: info@landscaipeapp.com</li>
+</ol>
+</main>
 
-<h2>5. Termination</h2>
-<p>We may suspend or terminate access if you violate these Terms.</p>
 
-<h2>6. Limitation of Liability</h2>
-<p>To the maximum extent permitted by law, LANDSCAIPE LLC is not liable for indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues related to use of the app or contractor interactions.</p>
+<footer>© <span id="year4"></span> LandscAIpe</footer>
+</div>
 
-<h2>7. Governing Law</h2>
-<p>These Terms are governed by the laws of the State of Oregon, USA.</p>
 
-<h2>8. Contact</h2>
-<p>Email: <a href="mailto:info@landscaipeapp.com">info@landscaipeapp.com</a></p>
-
-<footer class="muted">
-  <p>&copy; 2025 LANDSCAIPE LLC</p>
-</footer>
+<script>
+document.getElementById('tosDate').textContent=new Date().toLocaleDateString();
+document.getElementById('year4').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
