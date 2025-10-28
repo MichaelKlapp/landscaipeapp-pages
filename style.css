@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 .hero-logo {
-  max-width: 300px;
+  max-width: 450px;
   width: 100%;
   height: auto;
   mix-blend-mode: multiply;
@@ -167,6 +167,7 @@ nav a:hover {
   width: 40px;
   height: 40px;
   transition: opacity 0.2s ease;
+  mix-blend-mode: multiply;
 }
 
 .social-icon:hover {
@@ -180,11 +181,11 @@ nav a:hover {
   cursor: pointer;
   font-weight: 600;
   border-radius: 50px;
-  padding: 24px 60px;
-  font-size: 27px;
+  padding: 19px 48px;
+  font-size: 22px;
   color: #2d3748;
   background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
   display: inline-block;
@@ -192,12 +193,12 @@ nav a:hover {
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
 }
 
 .button:active {
   transform: translateY(0);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Cards */
