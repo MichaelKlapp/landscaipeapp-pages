@@ -58,6 +58,34 @@ Landscaipe provides you with a free way to design YOUR yard the way YOU want. Ou
 </a>
 </div>
 </section>
+
+<!-- Contact Form Section -->
+<section class="contact-section">
+<div class="contact-card">
+<h2 class="contact-title">Questions or Concerns?</h2>
+<p class="contact-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+<form class="contact-form" action="https://formspree.io/f/xanyrlzk" method="POST">
+<div class="field">
+<label for="contact-name">Your Name</label>
+<input class="input" id="contact-name" name="name" type="text" placeholder="Enter your name" required />
+</div>
+
+<div class="field">
+<label for="contact-email">Your Email</label>
+<input class="input" id="contact-email" name="email" type="email" placeholder="you@example.com" required />
+</div>
+
+<div class="field">
+<label for="contact-message">Your Message</label>
+<textarea class="input" id="contact-message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+</div>
+
+<div class="submit">
+<button class="button" type="submit">Send Message</button>
+</div>
+</form>
+</div>
+</section>
 </main>
 
 <footer>© <span id="year"></span> LandscAIpe</footer>
@@ -65,3 +93,4 @@ Landscaipe provides you with a free way to design YOUR yard the way YOU want. Ou
 <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
+
