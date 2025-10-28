@@ -55,7 +55,7 @@ nav a:hover {
 /* Home Page - Hero Section */
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
   margin-bottom: 80px;
@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 .hero-logo {
-  max-width: 450px;
+  max-width: 900px;
   width: 100%;
   height: auto;
   mix-blend-mode: multiply;
