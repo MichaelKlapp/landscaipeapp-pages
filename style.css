@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap');
+
 /* Reset */
 * {
   box-sizing: border-box;
@@ -433,6 +436,136 @@ footer {
   }
 }
 
+/* Test Links Page */
+.test-links-wrap {
+  max-width: 680px;
+  margin: 60px auto;
+}
+
+.test-links-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 48px;
+  color: #1a202c;
+  font-family: 'Arimo', sans-serif;
+}
+
+.test-platform-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 16px;
+  font-family: 'Arimo', sans-serif;
+}
+
+.test-help-text {
+  font-size: 14px;
+  color: #1a202c;
+  margin: 16px 0 0;
+  font-family: 'Arimo', sans-serif;
+}
+
+.test-help-text a {
+  color: #1a202c;
+  text-decoration: underline;
+}
+
+.test-help-text a:hover {
+  opacity: 0.7;
+}
+
+.test-button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 16px 32px;
+  font-size: 18px;
+  color: #ffffff;
+  background: #1a202c;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Arimo', sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+.test-button:hover {
+  opacity: 0.8;
+}
+
+.test-button:active {
+  opacity: 0.6;
+}
+
+.test-info-box {
+  background: #ffffff;
+  border: 2px solid #1a202c;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0 32px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 14px;
+  color: #1a202c;
+}
+
+.test-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.test-platform-section {
+  margin-bottom: 40px;
+}
+
+/* Delete Account Page */
+.delete-account-wrap {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.delete-account-section {
+  margin-bottom: 32px;
+}
+
+.delete-account-steps {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.delete-account-step {
+  margin: 12px 0;
+  padding-left: 12px;
+}
+
+.delete-account-step-number {
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.delete-account-alert {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.delete-account-contact-box {
+  background: #e7f3ef;
+  border: 1px solid #4a7c59;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 20px 24px;
@@ -462,5 +595,9 @@ footer {
   
   .policy {
     padding: 32px 24px;
+  }
+  
+  .test-links-title {
+    font-size: 36px;
   }
 }

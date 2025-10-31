@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beta Testing — LandscAIpe</title>
+<meta name="description" content="Join the LandscAIpe beta testing program. Get early access on iOS and Android." />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="container">
+<header class="header">
+<nav>
+<a href="/index.html">Home</a>
+<a href="/test-links.html">Test Links</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="/terms.html">Terms of Service</a>
+<a href="/delete-account.html">Delete Account</a>
+</nav>
+</header>
+
+<main>
+<section class="card round-xl test-links-wrap">
+<h1 class="test-links-title">The Wait is OVER</h1>
+
+<div class="test-platform-section">
+<h2 class="test-platform-label">IOS:</h2>
+<a class="test-button" href="https://testflight.apple.com/join/8w5u6ufJ" target="_blank" rel="noopener noreferrer">Download LandscAIpe IOS Beta</a>
+<p class="test-help-text">In order to test on IOS you'll need access to <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">TestFlight</a></p>
+</div>
+
+<div class="test-platform-section">
+<h2 class="test-platform-label">Google Play:</h2>
+<a class="test-button" href="#" onclick="showGooglePlayNotice(event)">Download LandscAIpe Google Play Beta</a>
+</div>
+
+<div id="google-play-notice" class="test-info-box" style="display: none;">
+Google Play beta testing will be available shortly. We're currently under review by Google Play. Please check back soon!
+</div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> LandscAIpe</footer>
+</div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function showGooglePlayNotice(event) {
+  event.preventDefault();
+  const notice = document.getElementById('google-play-notice');
+  if (notice.style.display === 'none' || notice.style.display === '') {
+    notice.style.display = 'block';
+    notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    notice.style.display = 'none';
+  }
+}
+</script>
+</body>
+</html>
+

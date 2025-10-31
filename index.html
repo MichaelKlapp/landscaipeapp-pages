@@ -13,9 +13,10 @@
 <header class="header">
 <nav>
 <a href="/index.html">Home</a>
-<a href="/waitlist.html">Join Waitlist</a>
+<a href="/test-links.html">Test Links</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="/terms.html">Terms of Service</a>
+<a href="/delete-account.html">Delete Account</a>
 </nav>
 </header>
 
@@ -24,14 +25,18 @@
 <section class="hero-section">
 <div class="hero-left">
 <img class="hero-logo" src="/assets/landscaipe-logo.png" alt="LandscAIpe" />
-<a class="button" href="/waitlist.html">Join Waitlist</a>
+<a class="button" href="https://testflight.apple.com/join/8w5u6ufJ" target="_blank" rel="noopener noreferrer">Test on iOS</a>
+<a class="button" href="#" onclick="showGooglePlayNotice(event)">Test on Google Play</a>
 </div>
 <div class="hero-right">
 <h1 class="hero-heading">Transform YOUR yard however you'd like</h1>
 <img class="hero-image" src="/assets/website-photo.PNG" alt="Beautiful landscaped front yard" />
 <p class="hero-description">
-Landscaipe provides you with a free way to design YOUR yard the way YOU want. Our app uses AI image generation to evaluate your yard and use the descriptions you give to design your dream landscape. Currently the app is undergoing beta testing! If you'd like to help us get closer to launching on the App Store and Google Play, please join our waitlist and we'll give you early access as soon as possible. Thank you!
+Landscaipe provides you with a free way to design YOUR yard the way YOU want. Our app uses AI image generation to evaluate your yard and use the descriptions you give to design your dream landscape. The app is now available for beta testing on iOS and will be launching on Google Play soon!
 </p>
+<div class="test-info-box" id="google-play-notice-home" style="display: none;">
+Google Play beta testing will be available shortly. We're currently under review by Google Play. Please check back soon!
+</div>
 </div>
 </section>
 
@@ -90,7 +95,21 @@ Landscaipe provides you with a free way to design YOUR yard the way YOU want. Ou
 
 <footer>© <span id="year"></span> LandscAIpe</footer>
 </div>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function showGooglePlayNotice(event) {
+  event.preventDefault();
+  const notice = document.getElementById('google-play-notice-home');
+  if (notice.style.display === 'none' || notice.style.display === '') {
+    notice.style.display = 'block';
+    notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    notice.style.display = 'none';
+  }
+}
+</script>
 </body>
 </html>
 
