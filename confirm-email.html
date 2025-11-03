@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Email - LandscAIpe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: #ffffff;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+        .logo {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+        .confirmation-message {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 0;
+        }
+        .checkmark-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+        .exit-message {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 0;
+        }
+        .status {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        .status.loading {
+            background-color: #f8f9fa;
+            color: #333;
+            display: block;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2c5a3d;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error-content {
+            display: none;
+        }
+        .success-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loading-content" class="status loading">
+            <div class="spinner"></div>
+            <p>Confirming your email address...</p>
+        </div>
+        
+        <div id="success-content" class="success-content" style="display: none;">
+            <img src="/assets/landscaipe-logo.png" alt="LandscAIpe" class="logo" />
+            <p class="confirmation-message">Your email has been confirmed!</p>
+            <img src="/assets/confirmation-logo.jpg" alt="Confirmed" class="checkmark-icon" />
+            <p class="exit-message">You may exit this page.</p>
+        </div>
+        
+        <div id="error-content" class="error-content">
+            <div class="status error">
+                <p><strong>❌ Confirmation Failed</strong></p>
+                <p id="error-message">There was an error confirming your email. The link may have expired or already been used.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://jrmxdwwujfxnbzbdckef.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpybXhkd3d1amZ4bmJ6YmRja2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1ODcxNTcsImV4cCI6MjA3NDE2MzE1N30.FJi_nGgdesQN7L67FvZtMcY5IEyn5GFtSk_wGODdO3A';
+        
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        async function confirmEmail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            const type = urlParams.get('type');
+            const code = urlParams.get('code');
+            
+            // Supabase uses either 'token' or 'code' for email confirmation
+            if (!token && !code) {
+                showError('Missing confirmation token. Please check your email and click the link again.');
+                return;
+            }
+            
+            try {
+                if (code) {
+                    // Exchange code for session (newer Supabase flow)
+                    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+                    
+                    if (error) {
+                        console.error('Confirmation error:', error);
+                        showError(error.message || 'Failed to confirm email. The link may have expired.');
+                        return;
+                    }
+                    
+                    if (data.session) {
+                        showSuccess();
+                    } else {
+                        showError('Email confirmation completed, but no session was created.');
+                    }
+                } else if (token) {
+                    // Verify token (older Supabase flow)
+                    const { data, error } = await supabase.auth.verifyOtp({
+                        token_hash: token,
+                        type: type || 'signup'
+                    });
+                    
+                    if (error) {
+                        console.error('Confirmation error:', error);
+                        showError(error.message || 'Failed to confirm email. The link may have expired.');
+                        return;
+                    }
+                    
+                    if (data.user) {
+                        showSuccess();
+                    } else {
+                        showError('Email confirmation completed, but no user was found.');
+                    }
+                }
+            } catch (error) {
+                console.error('Unexpected error:', error);
+                showError('An unexpected error occurred. Please try again or contact support.');
+            }
+        }
+        
+        function showSuccess() {
+            document.getElementById('loading-content').style.display = 'none';
+            document.getElementById('error-content').style.display = 'none';
+            document.getElementById('success-content').style.display = 'flex';
+            
+            // Try to open the app after a short delay
+            setTimeout(() => {
+                window.location.href = 'landscaip://';
+            }, 2000);
+        }
+        
+        function showError(message) {
+            document.getElementById('loading-content').style.display = 'none';
+            document.getElementById('success-content').style.display = 'none';
+            document.getElementById('error-content').style.display = 'block';
+            document.getElementById('error-message').textContent = message;
+        }
+        
+        // Start confirmation when page loads
+        window.addEventListener('DOMContentLoaded', confirmEmail);
+    </script>
+</body>
+</html>
