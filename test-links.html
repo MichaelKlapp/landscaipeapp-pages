@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Beta Testing — LandscAIpe</title>
-<meta name="description" content="Join the LandscAIpe beta testing program. Get early access on iOS and Android." />
+<title>Download LandscAIpe | App Store and Google Play</title>
+<meta name="description" content="Download LandscAIpe on iOS and Android to redesign your yard with AI-generated landscape plans." />
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
 <header class="header">
 <nav>
 <a href="/index.html">Home</a>
-<a href="/test-links.html">Test Links</a>
+<a href="/test-links.html">Download</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="/terms.html">Terms of Service</a>
 <a href="/delete-account.html">Delete Account</a>
@@ -20,43 +20,68 @@
 </header>
 
 <main>
-<section class="card round-xl test-links-wrap">
-<h1 class="test-links-title">The Wait is OVER</h1>
+<section class="download-hero">
+<div class="download-card">
+<span class="eyebrow">Download</span>
+<h1 class="download-title">LandscAIpe is ready when you are</h1>
+<p class="download-copy">Grab the app on your favorite store and start redesigning your yard with instant AI renderings, planting ideas, and shareable plans.</p>
+<div class="store-stack">
+<a class="store-button store-apple" href="https://apps.apple.com/app/id6754616615" target="_blank" rel="noopener noreferrer">
+<span class="store-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" class="store-svg">
+<path d="M19.45 16.29c-.45 1.06-.67 1.53-1.26 2.47-.82 1.32-1.98 2.97-3.42 2.99-1.28.01-1.61-.86-3.35-.86-1.73 0-2.11.84-3.39.87-1.41.02-2.49-1.43-3.32-2.74-2.28-3.57-2.52-7.75-1.11-9.97.99-1.58 2.56-2.51 4.02-2.51 1.5 0 2.44.88 3.68.88 1.21 0 1.95-.88 3.68-.88 1.31 0 2.7.71 3.7 1.93-3.26 1.79-2.73 6.47.77 7.82zM15.78 3.98c.78-.95 1.31-2.28 1.16-3.58-1.12.08-2.47.78-3.25 1.73-.71.84-1.33 2.19-1.17 3.48 1.25.1 2.48-.63 3.26-1.63z"></path>
+</svg>
+</span>
+<span class="store-text">
+<span class="store-subline">Download on the</span>
+<span class="store-name">App Store</span>
+</span>
+</a>
+<p class="platform-note">Built for iPhone and iPad.</p>
 
-<div class="test-platform-section">
-<h2 class="test-platform-label">IOS:</h2>
-<a class="test-button" href="https://testflight.apple.com/join/8w5u6ufJ" target="_blank" rel="noopener noreferrer">Download LandscAIpe IOS Beta</a>
-<p class="test-help-text">In order to test on IOS you'll need access to <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">TestFlight</a></p>
+<a class="store-button store-google" href="https://play.google.com/store/apps/details?id=com.landscaipe.landscaipmvp&hl=en_US" target="_blank" rel="noopener noreferrer">
+<span class="store-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" class="store-svg">
+<path d="M3.2 2.53c-.12.22-.2.5-.2.87v17.2c0 .37.08.65.2.87l9.52-9.48L3.2 2.53zM14.35 12.4l-2.08 2.09 4.93 2.82c.8.46 1.45.17 1.45-.79V8.73c0-.96-.65-1.25-1.45-.79l-4.85 2.76z"></path>
+</svg>
+</span>
+<span class="store-text">
+<span class="store-subline">Available on</span>
+<span class="store-name">Google Play</span>
+</span>
+</a>
+<p class="platform-note">Requires Android 10 or newer.</p>
+</div>
+<div class="download-tags">
+<span class="meta-pill">No waitlist</span>
+<span class="meta-pill">Save multiple projects</span>
+<span class="meta-pill">Share with contractors</span>
+</div>
 </div>
 
-<div class="test-platform-section">
-<h2 class="test-platform-label">Google Play:</h2>
-<a class="test-button" href="#" onclick="showGooglePlayNotice(event)">Download LandscAIpe Google Play Beta</a>
+<div class="download-side">
+<h2>What you'll get</h2>
+<ul class="feature-list">
+<li>Generate multiple design options from a single photo.</li>
+<li>Choose styles that match your climate and budget.</li>
+<li>Keep designs organized and share them with your team.</li>
+<li>Get lighting, pathway, and planting ideas instantly.</li>
+</ul>
+<div class="download-helper">
+<p>Questions about installing? Reach us through the form on the home page — we're here to help.</p>
 </div>
-
-<div id="google-play-notice" class="test-info-box" style="display: none;">
-Google Play beta testing will be available shortly. We're currently under review by Google Play. Please check back soon!
 </div>
 </section>
 </main>
 
-<footer>© <span id="year"></span> LandscAIpe</footer>
+<footer>&copy; <span id="year"></span> LandscAIpe</footer>
 </div>
 
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-
-function showGooglePlayNotice(event) {
-  event.preventDefault();
-  const notice = document.getElementById('google-play-notice');
-  if (notice.style.display === 'none' || notice.style.display === '') {
-    notice.style.display = 'block';
-    notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  } else {
-    notice.style.display = 'none';
-  }
+const year = document.getElementById('year');
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
 </script>
 </body>
 </html>
-
