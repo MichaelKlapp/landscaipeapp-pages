@@ -10,7 +10,10 @@
 <body>
 <div class="container">
 <header class="header">
-<nav>
+<button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="menu-icon"></span>
+</button>
+<nav id="main-nav">
 <a href="/index.html">Home</a>
 <a href="/test-links.html">Download</a>
 <a href="/privacy.html">Privacy Policy</a>
@@ -100,6 +103,29 @@
 const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
+}
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mainNav.classList.toggle('nav-open');
+    menuToggle.classList.toggle('menu-open');
+  });
+
+  // Close menu when clicking on a link
+  const navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('nav-open');
+      menuToggle.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 </script>
 </body>
