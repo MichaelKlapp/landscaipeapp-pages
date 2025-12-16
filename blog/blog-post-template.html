@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Terms of Service â€” LandscAIpe</title>
+<title>Blog Post Title | LandscAIpe Blog</title>
+<meta name="description" content="Blog post description" />
 <link rel="stylesheet" href="/style.css" />
 <link rel="icon" type="image/png" href="/assets/LandscAIpe Logo.png" />
 <link rel="apple-touch-icon" href="/assets/LandscAIpe Logo.png" />
@@ -24,32 +25,32 @@
 </nav>
 </header>
 
-<main class="policy card round-xl">
-<h1>Terms of Service</h1>
-<p class="meta">Last Updated: <span id="tosDate"></span></p>
-<ol>
-<li><strong>Services Provided</strong> â€” LandscAIpe provides AIâ€‘generated landscaping cost estimates, design suggestions, and optional connections to contractors.</li>
-<li><strong>Estimates & Accuracy</strong> â€” Estimates are for informational purposes only and are not binding quotes. Actual costs may vary.</li>
-<li><strong>Contractors</strong> â€” Contractors introduced through the app are independent third parties; LandscAIpe LLC is not responsible for their work or pricing.</li>
-<li><strong>User Responsibilities</strong>
-<ul>
-<li>Provide accurate project information.</li>
-<li>Use the app lawfully and do not attempt to disrupt services.</li>
-</ul>
-</li>
-<li><strong>Termination</strong> â€” We may suspend or terminate access if you violate these Terms.</li>
-<li><strong>Limitation of Liability</strong> â€” To the maximum extent permitted by law, LandscAIpe LLC is not liable for indirect or consequential damages.</li>
-<li><strong>Governing Law</strong> â€” These Terms are governed by the laws of the State of Oregon, USA.</li>
-<li><strong>Contact</strong> â€” Email: info@landscaipeapp.com</li>
-</ol>
+<main>
+<article class="blog-post">
+<a href="/blog.html" class="blog-back-link">← Back to Blog</a>
+
+<div class="blog-post-header">
+<h1 class="blog-post-title">Blog Post Title</h1>
+<div class="blog-post-meta">
+<span>Published: January 1, 2025</span>
+</div>
+</div>
+
+<div class="blog-post-content">
+<!-- Blog content goes here -->
+<p>Your blog post content will be inserted here.</p>
+</div>
+</article>
 </main>
 
-<footer>Â© <span id="year4"></span> LandscAIpe</footer>
+<footer>&copy; <span id="year"></span> LandscAIpe</footer>
 </div>
 
 <script>
-document.getElementById('tosDate').textContent=new Date().toLocaleDateString();
-document.getElementById('year4').textContent=new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
@@ -71,13 +72,11 @@ if (menuToggle && mainNav) {
     document.body.classList.toggle('nav-open');
   });
 
-  // Close menu when clicking on a link
   const navLinks = mainNav.querySelectorAll('a');
   navLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close menu when clicking on overlay
   document.addEventListener('click', (e) => {
     if (mainNav.classList.contains('nav-open') && 
         !mainNav.contains(e.target) && 
