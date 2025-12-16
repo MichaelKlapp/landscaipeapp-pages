@@ -6,7 +6,8 @@
 <title>LandscAIpe | Design your backyard in minutes</title>
 <meta name="description" content="Transform your outdoor space with AI-powered landscaping design. Visualize possibilities, estimate costs, and connect with trusted contractors all in one place." />
 <link rel="stylesheet" href="/style.css" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" href="/assets/LandscAIpe Logo.png" />
+<link rel="apple-touch-icon" href="/assets/LandscAIpe Logo.png" />
 </head>
 <body>
 <div class="container">
@@ -139,21 +140,34 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.getElementById('main-nav');
 
 if (menuToggle && mainNav) {
+  const closeMenu = () => {
+    mainNav.classList.remove('nav-open');
+    menuToggle.classList.remove('menu-open');
+    document.body.classList.remove('nav-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
+
   menuToggle.addEventListener('click', () => {
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', !isExpanded);
     mainNav.classList.toggle('nav-open');
     menuToggle.classList.toggle('menu-open');
+    document.body.classList.toggle('nav-open');
   });
 
   // Close menu when clicking on a link
   const navLinks = mainNav.querySelectorAll('a');
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('nav-open');
-      menuToggle.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu when clicking on overlay
+  document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('nav-open') && 
+        !mainNav.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
   });
 }
 </script>
