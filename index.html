@@ -77,15 +77,21 @@ LandscAIpe gives you instant visual plans, cost-friendly ideas, and shareable de
 <h2 class="section-title">See what's possible for your yard</h2>
 <p class="section-description">Realistic visualizations help you pick the layout, planting, and lighting that fit your space.</p>
 </div>
-<div class="before-after-container">
-<div class="before-after-column">
-<h3 class="before-after-label">Before</h3>
-<img class="before-after-image" src="/assets/yard-before.jpeg" alt="Yard before transformation" />
+<div class="slider-container">
+<div class="slider-wrapper">
+<div class="slider-before">
+<img src="/assets/yard-before.jpeg" alt="Yard before transformation" />
+<div class="slider-label slider-label-before">Before</div>
 </div>
-<div class="arrow" aria-hidden="true">&rarr;</div>
-<div class="before-after-column">
-<h3 class="before-after-label">After</h3>
-<img class="before-after-image" src="/assets/yard-after.PNG" alt="Yard after transformation" />
+<div class="slider-after">
+<img src="/assets/yard-after.PNG" alt="Yard after transformation" />
+<div class="slider-label slider-label-after">After</div>
+</div>
+<div class="slider-handle" id="sliderHandle">
+<div class="slider-handle-line"></div>
+<div class="slider-handle-arrow slider-handle-arrow-left">‹</div>
+<div class="slider-handle-arrow slider-handle-arrow-right">›</div>
+</div>
 </div>
 </div>
 <div class="seconds-text">Ready in seconds</div>
@@ -168,6 +174,73 @@ if (menuToggle && mainNav) {
         !mainNav.contains(e.target) && 
         !menuToggle.contains(e.target)) {
       closeMenu();
+    }
+  });
+}
+
+// Interactive Before/After Slider
+const sliderWrapper = document.querySelector('.slider-wrapper');
+const sliderHandle = document.getElementById('sliderHandle');
+const sliderAfter = document.querySelector('.slider-after');
+
+if (sliderWrapper && sliderHandle && sliderAfter) {
+  let isDragging = false;
+  let currentPosition = 50; // Start at 50%
+
+  function updateSlider(position) {
+    currentPosition = Math.max(0, Math.min(100, position));
+    sliderHandle.style.left = currentPosition + '%';
+    sliderAfter.style.clipPath = `inset(0 ${100 - currentPosition}% 0 0)`;
+  }
+
+  function handleMove(clientX) {
+    if (!isDragging) return;
+    
+    const rect = sliderWrapper.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = (x / rect.width) * 100;
+    updateSlider(percentage);
+  }
+
+  // Mouse events
+  sliderHandle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    sliderWrapper.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  sliderWrapper.addEventListener('mousemove', (e) => {
+    handleMove(e.clientX);
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    sliderWrapper.style.cursor = 'grab';
+  });
+
+  // Touch events for mobile
+  sliderHandle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    e.preventDefault();
+  });
+
+  sliderWrapper.addEventListener('touchmove', (e) => {
+    if (isDragging && e.touches[0]) {
+      handleMove(e.touches[0].clientX);
+    }
+  });
+
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  // Click on slider to jump to position
+  sliderWrapper.addEventListener('click', (e) => {
+    if (e.target === sliderWrapper || e.target.closest('.slider-before') || e.target.closest('.slider-after')) {
+      const rect = sliderWrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = (x / rect.width) * 100;
+      updateSlider(percentage);
     }
   });
 }
