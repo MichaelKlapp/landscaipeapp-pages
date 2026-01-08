@@ -1,0 +1,17 @@
+{
+  "name": "landscaipe-contractor-portal-server",
+  "private": true,
+  "version": "0.1.0",
+  "description": "LandscAIpe Contractor Portal local API + static frontend server (v1)",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "seed": "node server.js --seed"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^2.0.2"
+  }
+}
+
+

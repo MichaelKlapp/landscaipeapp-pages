@@ -1,0 +1,309 @@
+{
+  "contractors": [
+    {
+      "id": "ctr_1",
+      "role": "contractor",
+      "status": "active",
+      "email": "contractor@example.com",
+      "password": "password",
+      "companyName": "Acme Landscape Co.",
+      "ownerName": "Jordan Smith",
+      "yearsInBusiness": 8,
+      "ratingAvg": 4.8,
+      "ratingCount": 41,
+      "photos": [],
+      "tagline": "Hardscape + lighting specialists",
+      "logoUrl": null,
+      "phone": "(503) 555-0111",
+      "plan": "pro100",
+      "autoReload": {
+        "enabled": true,
+        "threshold": 2,
+        "reloadAmount": 10
+      },
+      "serviceZips": [
+        "97062",
+        "97140",
+        "97335",
+        "97365",
+        "97489",
+        "97005"
+      ],
+      "majorCategories": [
+        "Landscape Construction",
+        "Landscape Design/Build"
+      ],
+      "subCategories": [
+        "Lights",
+        "Walkways",
+        "Water Features",
+        "Structures",
+        "Fencing"
+      ]
+    },
+    {
+      "id": "ctr_2",
+      "role": "contractor",
+      "status": "active",
+      "email": "contractor2@example.com",
+      "password": "password",
+      "companyName": "Greenleaf Design + Build",
+      "ownerName": "Taylor Lee",
+      "yearsInBusiness": 3,
+      "ratingAvg": 4.6,
+      "ratingCount": 17,
+      "photos": [],
+      "tagline": "Planting, beds, and full-yard refreshes",
+      "logoUrl": null,
+      "phone": "(503) 555-0188",
+      "plan": "payg",
+      "autoReload": {
+        "enabled": false,
+        "threshold": 2,
+        "reloadAmount": 10
+      },
+      "serviceZips": [
+        "97062",
+        "97335",
+        "97201"
+      ],
+      "majorCategories": [
+        "Landscape Design/Build"
+      ],
+      "subCategories": [
+        "Flowers",
+        "Bushes",
+        "Lights",
+        "Walkways"
+      ]
+    },
+    {
+      "id": "adm_1",
+      "role": "admin",
+      "status": "active",
+      "email": "admin@landscaipeapp.com",
+      "password": "TestPasword",
+      "companyName": "LandscAIpe Admin",
+      "ownerName": "Admin",
+      "yearsInBusiness": 0,
+      "ratingAvg": null,
+      "ratingCount": null,
+      "photos": [],
+      "tagline": null,
+      "logoUrl": null,
+      "phone": null,
+      "plan": "admin",
+      "autoReload": {
+        "enabled": false,
+        "threshold": 0,
+        "reloadAmount": 0
+      },
+      "serviceZips": [],
+      "majorCategories": [],
+      "subCategories": []
+    },
+    {
+      "id": "ctr_014c64ac6465481bab",
+      "role": "contractor",
+      "status": "active",
+      "email": "michael@landscaipeapp.com",
+      "password": "CoDe6'7'",
+      "companyName": "Michael's Business",
+      "ownerName": "Michael Klapp",
+      "yearsInBusiness": 4,
+      "ratingAvg": null,
+      "ratingCount": null,
+      "photos": [
+        {
+          "id": "ph_818b8af3980441b382",
+          "url": "/contractor-portal/uploads/ctr_014c64ac6465481bab/b7369bac-5.jpg",
+          "thumbUrl": "/contractor-portal/uploads/ctr_014c64ac6465481bab/b7369bac-5.jpg",
+          "isFeatured": true,
+          "sortOrder": 1,
+          "createdAt": "2026-01-07T23:23:51.094Z"
+        },
+        {
+          "id": "ph_fb04c31224584f9d91",
+          "url": "/contractor-portal/uploads/ctr_014c64ac6465481bab/71098503-5.webp",
+          "thumbUrl": "/contractor-portal/uploads/ctr_014c64ac6465481bab/71098503-5.webp",
+          "isFeatured": false,
+          "sortOrder": 2,
+          "createdAt": "2026-01-07T23:24:21.328Z"
+        },
+        {
+          "id": "ph_3a8ffd30d3914365a0",
+          "url": "/contractor-portal/uploads/ctr_014c64ac6465481bab/c03684eb-9.jpg",
+          "thumbUrl": "/contractor-portal/uploads/ctr_014c64ac6465481bab/c03684eb-9.jpg",
+          "isFeatured": true,
+          "sortOrder": 3,
+          "createdAt": "2026-01-07T23:24:56.740Z"
+        }
+      ],
+      "tagline": null,
+      "logoUrl": null,
+      "phone": "5035459773",
+      "plan": "payg",
+      "autoReload": {
+        "enabled": false,
+        "threshold": 2,
+        "reloadAmount": 10
+      },
+      "serviceZips": [
+        "97062"
+      ],
+      "majorCategories": [
+        "Landscape Construction"
+      ],
+      "subCategories": [
+        "Lights",
+        "Flowers",
+        "Bushes"
+      ]
+    }
+  ],
+  "homeowners": [
+    {
+      "id": "hm_1",
+      "displayName": "Casey",
+      "email": "casey@example.com",
+      "phone": "+15035550123",
+      "zip": "97062",
+      "phoneVerifiedAt": "2026-01-06T19:00:00.000Z"
+    },
+    {
+      "id": "hm_2",
+      "displayName": "Riley",
+      "email": "riley@example.com",
+      "phone": "+15035550666",
+      "zip": "97335",
+      "phoneVerifiedAt": "2026-01-06T20:15:00.000Z"
+    },
+    {
+      "id": "hm_aaab457b05364a4d9c",
+      "displayName": "John Dilly",
+      "email": "klappyshs@gmail.com",
+      "phone": "5035459773",
+      "zip": "97062",
+      "phoneVerifiedAt": "2026-01-08T00:51:54.229Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead_1",
+      "homeownerId": "hm_1",
+      "zip": "97062",
+      "budgetMin": 1000,
+      "budgetMax": 2500,
+      "vibe": "Modern / clean lines",
+      "changeLevel": "Medium",
+      "majorCategories": [
+        "Landscape Construction"
+      ],
+      "requiredTags": [
+        "Walkways",
+        "Lights",
+        "Structures"
+      ],
+      "beforeImageUrl": "/assets/yard-before.jpeg",
+      "afterImageUrl": "/assets/yard-after.PNG",
+      "createdAt": "2026-01-06T21:00:00.000Z",
+      "status": "open",
+      "assignedContractorId": null,
+      "acceptedAt": null
+    },
+    {
+      "id": "lead_2",
+      "homeownerId": "hm_2",
+      "zip": "97335",
+      "budgetMin": 15000,
+      "budgetMax": 20000,
+      "vibe": "Lush / garden-forward",
+      "changeLevel": "High",
+      "majorCategories": [
+        "Landscape Design/Build"
+      ],
+      "requiredTags": [
+        "Flowers",
+        "Bushes",
+        "Walkways"
+      ],
+      "beforeImageUrl": "/assets/website-photo.PNG",
+      "afterImageUrl": "/assets/website-photo.PNG",
+      "createdAt": "2026-01-06T22:10:00.000Z",
+      "status": "open",
+      "assignedContractorId": null,
+      "acceptedAt": null
+    },
+    {
+      "id": "lead_20dd5b780f7946ccad",
+      "homeownerId": "hm_aaab457b05364a4d9c",
+      "zip": "97062",
+      "budgetMin": 1000,
+      "budgetMax": 2500,
+      "vibe": "Cozy",
+      "changeLevel": "Medium",
+      "majorCategories": [
+        "Landscape Construction"
+      ],
+      "requiredTags": [
+        "Lights",
+        "flowers",
+        "bushes"
+      ],
+      "beforeImageUrl": "/contractor-portal/uploads/leads/lead_20dd5b780f7946ccad/before.jpg",
+      "afterImageUrl": "/contractor-portal/uploads/leads/lead_20dd5b780f7946ccad/after.webp",
+      "createdAt": "2026-01-08T00:51:54.229Z",
+      "status": "open",
+      "assignedContractorId": null,
+      "acceptedAt": null
+    }
+  ],
+  "leadInterests": [],
+  "creditLedger": [
+    {
+      "id": "led_1",
+      "contractorId": "ctr_1",
+      "type": "monthly_grant",
+      "delta": 8,
+      "leadId": null,
+      "note": "Pro $100 plan monthly credits (demo seed)",
+      "createdAt": "2026-01-06T18:00:00.000Z"
+    },
+    {
+      "id": "led_2",
+      "contractorId": "ctr_2",
+      "type": "purchase",
+      "delta": 2,
+      "leadId": null,
+      "note": "Purchased 2 credits (demo seed)",
+      "createdAt": "2026-01-06T18:05:00.000Z"
+    },
+    {
+      "id": "led_e791a67d75504cebb6",
+      "contractorId": "ctr_014c64ac6465481bab",
+      "type": "admin_adjustment",
+      "delta": 5,
+      "leadId": null,
+      "note": "Admin adjustment (demo)",
+      "createdAt": "2026-01-08T00:52:06.358Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "sess_24e8b1bb20d64eaaaf",
+      "userId": "ctr_014c64ac6465481bab",
+      "createdAt": "2026-01-08T00:52:54.889Z",
+      "expiresAt": "2026-01-15T00:52:54.889Z"
+    }
+  ],
+  "auditLog": [
+    {
+      "id": "audit_86c536cba5fb41f8b8",
+      "type": "admin_add_credits",
+      "actorId": "adm_1",
+      "targetContractorId": "ctr_014c64ac6465481bab",
+      "amount": 5,
+      "createdAt": "2026-01-08T00:52:06.358Z"
+    }
+  ]
+}

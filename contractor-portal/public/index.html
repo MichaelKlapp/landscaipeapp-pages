@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LandscAIpe Contractor Portal</title>
+    <link rel="icon" type="image/png" href="./assets/LandscAIpe Logo.png" />
+    <link rel="apple-touch-icon" href="./assets/LandscAIpe Logo.png" />
+    <link rel="stylesheet" href="./app.css?v=202601071" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <div id="login" class="login">
+        <div class="login-card">
+          <div class="login-header">
+            <div class="brand-row">
+              <img class="brand-logo" src="./assets/LandscAIpe Logo.png" alt="LandscAIpe logo" />
+              <div class="brand-text">
+                <div class="brand-title">LandscAIpe Contractor Portal</div>
+                <div class="brand-subtitle">Sign in to view leads and manage your profile.</div>
+              </div>
+            </div>
+          </div>
+
+          <form id="login-form" class="form">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="username" required />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+            <button id="show-register" class="btn btn-outline" type="button">Create account</button>
+            <div class="hint">
+              Demo: <code>contractor@example.com</code> / <code>password</code> or <code>admin@landscaipeapp.com</code> / <code>admin</code>
+            </div>
+            <div id="login-error" class="error" role="alert" aria-live="polite"></div>
+          </form>
+
+          <form id="register-form" class="form hidden">
+            <div class="field">
+              <label for="reg-company">Business name</label>
+              <input id="reg-company" name="companyName" type="text" autocomplete="organization" required />
+            </div>
+            <div class="field">
+              <label for="reg-owner">Owner name</label>
+              <input id="reg-owner" name="ownerName" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="reg-years">Years in business</label>
+              <input id="reg-years" name="yearsInBusiness" type="number" min="0" max="100" value="1" required />
+            </div>
+            <div class="field">
+              <label for="reg-phone">Business phone</label>
+              <input id="reg-phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="reg-email">Email</label>
+              <input id="reg-email" name="email" type="email" autocomplete="username" required />
+            </div>
+            <div class="field">
+              <label for="reg-password">Password</label>
+              <input id="reg-password" name="password" type="password" autocomplete="new-password" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Create account</button>
+            <button id="show-login" class="btn btn-ghost" type="button">Back to sign in</button>
+            <div id="register-error" class="error" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <div id="shell" class="shell hidden">
+        <header class="topbar">
+          <div class="topbar-left">
+            <div class="topbar-title">LandscAIpe Contractor Portal</div>
+          </div>
+          <div class="topbar-right">
+            <div id="welcome" class="welcome">Welcome back</div>
+            <button id="logout" class="btn btn-ghost" type="button">Sign out</button>
+          </div>
+        </header>
+
+        <div class="main">
+          <aside class="sidebar">
+            <nav class="nav">
+              <button class="nav-item active" data-route="dashboard" type="button">
+                <span class="nav-icon"><img src="./cp-assets/dashbboard.png" alt="" /></span>
+                <span>Dashboard</span>
+              </button>
+              <button class="nav-item" data-route="leads" type="button">
+                <span class="nav-icon"><img src="./cp-assets/leads.png" alt="" /></span>
+                <span>Leads</span>
+              </button>
+              <button class="nav-item" data-route="billing" type="button">
+                <span class="nav-icon"><img src="./cp-assets/billing.png" alt="" /></span>
+                <span>Billing</span>
+              </button>
+              <button class="nav-item" data-route="profile" type="button">
+                <span class="nav-icon"><img src="./cp-assets/profile.png" alt="" /></span>
+                <span>Profile</span>
+              </button>
+              <button id="admin-tab" class="nav-item hidden" data-route="admin" type="button">
+                <span class="nav-icon"><img src="./cp-assets/admin.png" alt="" /></span>
+                <span>Admin</span>
+              </button>
+            </nav>
+            <button id="sidebar-logout" class="nav-item nav-item-signout" type="button">
+              <span>Sign Out</span>
+            </button>
+          </aside>
+
+          <section class="content">
+            <div class="page">
+              <div class="page-header">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="credits">
+                  <div class="pill">Credits: <span id="credits-available">—</span> available</div>
+                  <div class="pill pill-muted">Balance: <span id="credits-balance">—</span></div>
+                </div>
+              </div>
+
+              <div id="page-body" class="page-body"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js?v=202601071"></script>
+  </body>
+</html>
+
+
