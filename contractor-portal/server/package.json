@@ -5,10 +5,15 @@
   "description": "LandscAIpe Contractor Portal local API + static frontend server (v1)",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
-    "seed": "node server.js --seed"
+    "dev": "node server-supabase.js",
+    "dev:json": "node server.js",
+    "seed:json": "node server.js --seed",
+    "seed:supabase": "node scripts/seed-supabase.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "multer": "^2.0.2"
   }

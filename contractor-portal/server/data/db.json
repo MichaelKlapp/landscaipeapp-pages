@@ -152,12 +152,46 @@
         "97062"
       ],
       "majorCategories": [
-        "Landscape Construction"
+        "Landscape Construction",
+        "Landscape Design/Build"
       ],
       "subCategories": [
         "Lights",
         "Flowers",
         "Bushes"
+      ]
+    },
+    {
+      "id": "ctr_e37df214b2eb4828bb",
+      "role": "contractor",
+      "status": "active",
+      "email": "testcontractor1@landscaipeapp.com",
+      "password": "TestPassword",
+      "companyName": "Test Contractor 1",
+      "ownerName": "Tester 1",
+      "yearsInBusiness": 1,
+      "ratingAvg": null,
+      "ratingCount": null,
+      "photos": [],
+      "tagline": null,
+      "logoUrl": null,
+      "phone": "15035459773",
+      "plan": "payg",
+      "autoReload": {
+        "enabled": false,
+        "threshold": 2,
+        "reloadAmount": 10
+      },
+      "serviceZips": [
+        "97062"
+      ],
+      "majorCategories": [
+        "Landscape Construction"
+      ],
+      "subCategories": [
+        "Lights",
+        "Walkways",
+        "Flowers"
       ]
     }
   ],
@@ -256,9 +290,85 @@
       "status": "open",
       "assignedContractorId": null,
       "acceptedAt": null
+    },
+    {
+      "id": "lead_1551346e2805420397",
+      "homeownerId": "hm_aaab457b05364a4d9c",
+      "zip": "97062",
+      "budgetMin": 1000,
+      "budgetMax": 2500,
+      "vibe": "Modern",
+      "changeLevel": "Medium",
+      "majorCategories": [
+        "Landscape Construction"
+      ],
+      "requiredTags": [
+        "Walkways",
+        "Lights",
+        "Flowers"
+      ],
+      "beforeImageUrl": "/contractor-portal/uploads/leads/lead_1551346e2805420397/before.jpg",
+      "afterImageUrl": "/contractor-portal/uploads/leads/lead_1551346e2805420397/after.webp",
+      "createdAt": "2026-01-08T18:53:23.511Z",
+      "status": "open",
+      "assignedContractorId": null,
+      "acceptedAt": null
     }
   ],
-  "leadInterests": [],
+  "leadInterests": [
+    {
+      "id": "li_6917274fc8a54c1685",
+      "leadId": "lead_1",
+      "contractorId": "ctr_014c64ac6465481bab",
+      "status": "withdrawn",
+      "heldAt": "2026-01-08T17:45:14.186Z",
+      "expiresAt": "2026-01-12T17:45:14.186Z",
+      "capturedAt": null,
+      "releasedAt": null,
+      "expiredAt": null,
+      "withdrawnAt": "2026-01-08T17:45:33.105Z",
+      "releaseReason": "contractor_withdrew"
+    },
+    {
+      "id": "li_dec235996d86419aa5",
+      "leadId": "lead_20dd5b780f7946ccad",
+      "contractorId": "ctr_014c64ac6465481bab",
+      "status": "withdrawn",
+      "heldAt": "2026-01-08T17:45:44.723Z",
+      "expiresAt": "2026-01-12T17:45:44.723Z",
+      "capturedAt": null,
+      "releasedAt": null,
+      "expiredAt": null,
+      "withdrawnAt": "2026-01-08T18:00:30.491Z",
+      "releaseReason": "contractor_withdrew"
+    },
+    {
+      "id": "li_1824fd2156874c248e",
+      "leadId": "lead_1551346e2805420397",
+      "contractorId": "ctr_e37df214b2eb4828bb",
+      "status": "held",
+      "heldAt": "2026-01-08T19:01:35.897Z",
+      "expiresAt": "2026-01-12T19:01:35.897Z",
+      "capturedAt": null,
+      "releasedAt": null,
+      "expiredAt": null,
+      "withdrawnAt": null,
+      "releaseReason": null
+    },
+    {
+      "id": "li_40d52872e99c43d9a8",
+      "leadId": "lead_1551346e2805420397",
+      "contractorId": "ctr_014c64ac6465481bab",
+      "status": "held",
+      "heldAt": "2026-01-08T19:02:19.950Z",
+      "expiresAt": "2026-01-12T19:02:19.950Z",
+      "capturedAt": null,
+      "releasedAt": null,
+      "expiredAt": null,
+      "withdrawnAt": null,
+      "releaseReason": null
+    }
+  ],
   "creditLedger": [
     {
       "id": "led_1",
@@ -286,14 +396,23 @@
       "leadId": null,
       "note": "Admin adjustment (demo)",
       "createdAt": "2026-01-08T00:52:06.358Z"
+    },
+    {
+      "id": "led_21602cc77f454ad68d",
+      "contractorId": "ctr_e37df214b2eb4828bb",
+      "type": "admin_adjustment",
+      "delta": 5,
+      "leadId": null,
+      "note": "Admin adjustment (demo)",
+      "createdAt": "2026-01-08T19:00:31.609Z"
     }
   ],
   "sessions": [
     {
-      "token": "sess_24e8b1bb20d64eaaaf",
-      "userId": "ctr_014c64ac6465481bab",
-      "createdAt": "2026-01-08T00:52:54.889Z",
-      "expiresAt": "2026-01-15T00:52:54.889Z"
+      "token": "sess_a81f694db53d47749e",
+      "userId": "adm_1",
+      "createdAt": "2026-01-08T19:02:35.126Z",
+      "expiresAt": "2026-01-15T19:02:35.126Z"
     }
   ],
   "auditLog": [
@@ -304,6 +423,14 @@
       "targetContractorId": "ctr_014c64ac6465481bab",
       "amount": 5,
       "createdAt": "2026-01-08T00:52:06.358Z"
+    },
+    {
+      "id": "audit_feaf0d115ee64d0aad",
+      "type": "admin_add_credits",
+      "actorId": "adm_1",
+      "targetContractorId": "ctr_e37df214b2eb4828bb",
+      "amount": 5,
+      "createdAt": "2026-01-08T19:00:31.609Z"
     }
   ]
 }
