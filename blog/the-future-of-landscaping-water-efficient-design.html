@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Future of Landscaping: Water-Efficient Design for Modern Yards | LandscAIpe Blog</title>
+<meta name="description" content="Water costs and drought restrictions are reshaping outdoor design. Learn how water-efficient landscaping works—and how LandscAIpe helps you visualize it in your own yard." />
+<link rel="stylesheet" href="/style.css?v=20260106103520" />
+<link rel="icon" type="image/png" href="/assets/LandscAIpe Logo.png" />
+<link rel="apple-touch-icon" href="/assets/LandscAIpe Logo.png" />
+</head>
+<body>
+<div class="container">
+<header class="header">
+<button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="menu-icon"></span>
+</button>
+<a class="brand" href="/index.html">
+<img src="/assets/LandscAIpe Logo.png" alt="LandscAIpe logo" />
+<span>LandscAIpe</span>
+</a>
+<nav id="main-nav">
+<a href="/index.html">Home</a>
+<a href="/test-links.html">Download</a>
+<a href="/blog.html">Blog</a>
+<a href="http://localhost:3030/">Contractor Portal</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/terms.html">Terms</a>
+<a href="/delete-account.html">Delete Account</a>
+</nav>
+</header>
+
+<main>
+<article class="blog-post">
+<a href="/blog.html" class="blog-back-link">← Back to Blog</a>
+
+<div class="blog-post-header">
+<h1 class="blog-post-title">The Future of Landscaping: Water-Efficient Design for Modern Yards</h1>
+<div class="blog-post-meta">
+<span>Published: January 12, 2026</span>
+</div>
+</div>
+
+<div class="blog-post-content">
+<p>Hi LandscAIpers,</p>
+
+<p>Over the last decade, landscaping has evolved beyond simple curb appeal. With water costs rising across the U.S. and drought restrictions becoming the norm, outdoor design is now just as much about financial and environmental survival as it is about aesthetics. The era of oversized lawns and water-hungry landscapes is fading fast, replaced by intentional, efficient designs built for the future.</p>
+
+<p>The best yards today aren’t necessarily bigger, they’re better designed. Native and drought-tolerant plants use less water and thrive with minimal maintenance. Layering your yard helps too, taller plants along fences for privacy, mid-height shrubs for structure, and ground cover or mulch to lock moisture into the soil. Reducing lawn space and grouping plants with similar water needs can dramatically cut water use without making your yard feel bare or boring.</p>
+
+<p>The challenge isn’t a lack of ideas, it’s visualizing those ideas in your own space. Pinterest photos don’t match your yard, and advice articles rarely show what results actually look like. That’s where the LandscAIpe app comes in. LandscAIpe lets you upload a photo of your actual yard and instantly see AI-generated landscaping designs built around modern, water-efficient principles. Instead of guessing what might work, you can explore realistic options before spending money, digging anything up, or committing to a plan.</p>
+</div>
+</article>
+</main>
+
+<footer>&copy; <span id="year"></span> LandscAIpe</footer>
+</div>
+
+<script>
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+  const closeMenu = () => {
+    mainNav.classList.remove('nav-open');
+    menuToggle.classList.remove('menu-open');
+    document.body.classList.remove('nav-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mainNav.classList.toggle('nav-open');
+    menuToggle.classList.toggle('menu-open');
+    document.body.classList.toggle('nav-open');
+  });
+
+  const navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('nav-open') &&
+        !mainNav.contains(e.target) &&
+        !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+}
+</script>
+</body>
+</html>
+
