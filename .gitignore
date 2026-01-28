@@ -1,0 +1,27 @@
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+**/node_modules/
+
+# Env files (never commit secrets)
+.env
+.env/
+.env.*
+!.env.example
+
+# Build / cache
+dist/
+build/
+.next/
+.cache/
+
+# Local uploads (contractor portal)
+contractor-portal/server/uploads/
+

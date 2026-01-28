@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Winter Plant Care: Tips & Tricks to Help Your Garden Thrive in the Cold | LandscAIpe Blog</title>
+<meta name="description" content="Winter plant care tips to protect roots, prevent frost damage, and set your garden up for a strong spring." />
+<link rel="stylesheet" href="/style.css?v=20260106103520" />
+<link rel="icon" type="image/png" href="/assets/LandscAIpe Logo.png" />
+<link rel="apple-touch-icon" href="/assets/LandscAIpe Logo.png" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M794TXM0DT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M794TXM0DT');
+</script>
+<script defer src="/analytics.js?v=20260128"></script>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="menu-icon"></span>
+</button>
+<a class="brand" href="/index.html">
+<img src="/assets/LandscAIpe Logo.png" alt="LandscAIpe logo" />
+<span>LandscAIpe</span>
+</a>
+<nav id="main-nav">
+<a href="/index.html">Home</a>
+<a href="/test-links.html">Download</a>
+<a href="/blog.html">Blog</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/terms.html">Terms</a>
+<a href="/delete-account.html">Delete Account</a>
+</nav>
+</header>
+
+<main>
+<article class="blog-post">
+<a href="/blog.html" class="blog-back-link">← Back to Blog</a>
+
+<div class="blog-post-header">
+<h1 class="blog-post-title">Winter Plant Care: Tips & Tricks to Help Your Garden Thrive in the Cold</h1>
+<div class="blog-post-meta">
+<span>Published: January 16, 2026</span>
+</div>
+</div>
+
+<div class="blog-post-content">
+<p>Hi LandscAIpers,</p>
+
+<p>This week, I want to talk about winter and more specifically, how to keep your plants healthy and your garden moving forward when everything looks like it’s on pause. For a lot of homeowners, winter feels like the off season. Plants look dormant, the yard loses its color, and it’s easy to assume nothing needs attention until spring. That’s where most gardens quietly fall behind.</p>
+
+<p>Plants don’t stop needing care just because growth slows. Roots are still alive. The soil is still changing. And the choices you make in winter often decide whether your garden comes back strong… or struggles for months once warmer weather hits. One of the biggest winter mistakes is thinking protection means doing nothing. Cold temperatures, drying winds, and inconsistent moisture can stress plants more than heat ever does. Roots get exposed. Soil dries out. Delicate plants take frost damage overnight because no one thought to cover them.</p>
+
+<p>Another common issue is overcorrecting. Too much water, heavy pruning at the wrong time, or sealing plants in plastic can do more harm than good. Winter care is about balance, not extremes.</p>
+
+<h2>Simple principles for winter plant care</h2>
+<p>The gardens that perform best year after year follow a few simple principles. Mulch is used generously to insulate roots and regulate soil temperature. Watering is done intentionally, usually earlier in the day, and only when the soil actually needs it. Frost protection is lightweight and temporary, not permanent and suffocating.</p>
+
+<h2>Use winter to get ahead</h2>
+<p>Winter is also the season where good gardeners think ahead. Soil gets fed instead of plants. Layouts get reconsidered. Cold-season crops are planted where possible, and weak spots in the garden become obvious once everything else dies back.</p>
+
+<h2>Questions to ask right now</h2>
+<p>This is the time to ask the right questions. Which plants struggled this year? Which areas get less winter sun than expected? What parts of the garden feel cluttered or underused once the leaves are gone? Landscaping doesn’t start in spring. It starts with preparation. The gardens that look effortless in summer are usually the ones that were quietly cared for in winter.</p>
+
+<p>A healthy garden isn’t built in a rush. It’s built season by season, with intention. And winter, whether it looks like it or not, is doing more of the work than most people realize.</p>
+</div>
+</article>
+</main>
+
+<footer>&copy; <span id="year"></span> LandscAIpe</footer>
+</div>
+
+<script>
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+  const closeMenu = () => {
+    mainNav.classList.remove('nav-open');
+    menuToggle.classList.remove('menu-open');
+    document.body.classList.remove('nav-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mainNav.classList.toggle('nav-open');
+    menuToggle.classList.toggle('menu-open');
+    document.body.classList.toggle('nav-open');
+  });
+
+  const navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('nav-open') &&
+        !mainNav.contains(e.target) &&
+        !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+}
+</script>
+</body>
+</html>
+
