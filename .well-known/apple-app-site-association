@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "PTU3XG63ST.com.landscaipe.landscaipmvp",
+        "paths": [
+          "/referral*",
+          "/estimate/*",
+          "/*"
+        ]
+      }
+    ]
+  }
+}

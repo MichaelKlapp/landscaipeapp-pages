@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.landscaipe.landscaipmvp",
+      "sha256_cert_fingerprints": [
+        "CA:EB:C4:AF:66:A8:83:FF:87:65:2B:50:28:C2:7D:FA:2E:18:8F:F7:54:50:F8:7B:D0:91:C0:B9:36:5A:7B:6F"
+      ]
+    }
+  }
+]
