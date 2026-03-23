@@ -40,10 +40,11 @@
 
 <main class="policy card round-xl">
 <h1>Privacy Policy</h1>
-<p class="meta">Effective Date: January 5, 2026<br>Last Updated: January 5, 2026</p>
+<p class="meta">Effective Date: January 5, 2026<br>Last Updated: March 5, 2026</p>
 
 <h2>Definitions</h2>
 <p><strong>Service</strong> means the LandscAIpe mobile application and related services.</p>
+<p><strong>Company</strong> means LandscAIpe LLC ("LandscAIpe", "we", "us", or "our").</p>
 <p><strong>Personal Data</strong> means information that can identify you directly or indirectly.</p>
 <p><strong>Usage Data</strong> means information collected automatically from your use of the Service (for example, event activity and diagnostic data).</p>
 <p><strong>User Content</strong> means photos, text, project details, and other content you submit to the Service.</p>
@@ -51,147 +52,160 @@
 <p><strong>Contractors</strong> means independent third parties who may receive Lead information if you choose to submit it.</p>
 <p><strong>Lead</strong> means a request you submit to selected contractors that includes contact and project details.</p>
 
-<h2>Information Collection and Use</h2>
-<p>We collect several different types of information for various purposes to provide and improve the Service.</p>
+<h2>Information We Collect</h2>
+<p>We collect several types of information to provide and improve the Service.</p>
 
-<h3>Personal Data</h3>
+<h3>Account and Profile Data</h3>
 <p>When you create an account or update your profile, we may collect:</p>
 <ul>
 <li>Email address (required)</li>
-<li>Password (required; stored and managed by our authentication provider)</li>
+<li>Password (required; stored and managed by Supabase Auth)</li>
 <li>ZIP code (required)</li>
 <li>Phone number (optional)</li>
-<li>Display name (optional)</li>
+<li>Full name (optional; may be provided via Apple Sign-In)</li>
 <li>Profile photo (optional)</li>
 </ul>
+<p>Account information is cached locally on your device and stored server-side in Supabase.</p>
 
-<h3>User Content and Project Data</h3>
+<h3>Project Data</h3>
 <p>Depending on how you use the Service, we may collect and store:</p>
 <ul>
-<li>Yard or property photos you take in the app</li>
-<li>Photos you upload from your device photo library</li>
-<li>Plant photos (for plant tools)</li>
-<li>AI-generated landscape design images created from your inputs</li>
+<li>Project details: type, descriptions, dimensions, budget, and style preferences</li>
+<li>Progress photos of your yard or property</li>
+<li>AI-generated landscape design images</li>
+<li>Checklist items, materials lists, shopping lists, and saved tutorials</li>
 <li>Favorites and saved items</li>
-<li>Project details such as project type, features, budget range, style preferences, change level, dimensions, notes, and selections</li>
 </ul>
-
-<h3>Lead Submission Data</h3>
-<p>If you choose to submit a Lead to contractors, we may collect the information you provide, which can include:</p>
-<ul>
-<li>Name</li>
-<li>Email</li>
-<li>Phone number</li>
-<li>Address (optional)</li>
-<li>ZIP code</li>
-<li>Project summary details (type, features, budget range)</li>
-<li>Project notes (free-form text)</li>
-<li>Photos you choose to include (original photos and or generated design images)</li>
-<li>Contact preferences (email, phone, either, best time to contact)</li>
-<li>Which contractors you selected to receive the Lead</li>
-</ul>
-
-<h3>Usage Data</h3>
-<p>We may collect Usage Data to monitor and improve the Service. This can include:</p>
-<ul>
-<li>Event activity (app opens, onboarding completion, screen views, button taps, design generations, design selections, subscription actions)</li>
-<li>Device identifiers (such as iOS IDFV, Android device ID, and or an app-generated identifier)</li>
-<li>Session identifiers and timestamps</li>
-<li>Basic device information and diagnostic context related to app behavior and errors</li>
-</ul>
-<p>We do not run advertising, remarketing, or cross-app tracking via advertising SDKs.</p>
+<p>Project data is stored in Supabase.</p>
 
 <h3>Location Data</h3>
-<p>We do not request GPS or location permissions in the app. Instead, we collect your ZIP code and may derive approximate location context (such as city, state, and ZIP-derived coordinates) to display weather information, provide location-aware context for certain features, and support contractor matching where applicable.</p>
+<p>The app requests foreground device location permission to auto-fill your ZIP code, which is used for regional plant suggestions, local tips, and weather context. Raw GPS coordinates are not stored; only your ZIP code is retained. Location access is collected only when you grant permission and can be revoked at any time through your device settings. If a consent modal is shown, collection is subject to your consent choice.</p>
 
-<h3>Tracking Technologies (Website) and Local Device Storage (App)</h3>
-<p>Our website may use cookies or similar technologies. Our mobile app may use local device storage (for example, to store settings, in-progress project flow data, and identifiers used for analytics and reliability).</p>
+<h3>Photos and Images</h3>
+<p>Yard photos, plant photos, and profile photos you upload are stored in private Supabase Storage. AI-generated design images are also stored in private Supabase Storage. Images are accessed via time-limited signed URLs and are not publicly accessible.</p>
 
-<h2>Use of Data</h2>
-<p>We use the collected data for purposes that include:</p>
+<h3>Push Notification Tokens</h3>
+<p>If you enable push notifications, we store your push token, device platform, app version, and last-seen timestamp in Supabase to deliver notifications. You can disable push notifications at any time through your device settings.</p>
+
+<h3>Analytics and Device Data</h3>
+<p>We may collect device and usage data to monitor and improve the Service, including:</p>
 <ul>
-<li>Providing and maintaining the Service</li>
+<li>App version, build number, and platform (iOS or Android)</li>
+<li>Session ID and anonymous install ID (stored locally on your device)</li>
+<li>Screen navigation events (which screens were viewed)</li>
+<li>In-app actions and feature usage (see Analytics and Tracking below)</li>
+</ul>
+<p>We do not use advertising SDKs, remarketing SDKs, or cross-app tracking. No advertising identifiers are collected, and no App Tracking Transparency prompt is shown.</p>
+
+<h3>Lead and Quote Request Data</h3>
+<p>If you choose to request contractor quotes, we collect the information you provide, which may include:</p>
+<ul>
+<li>Name, email, phone number, and ZIP code</li>
+<li>Project summary, type, budget, and notes</li>
+<li>Photos you choose to include (yard photos and AI-generated designs)</li>
+<li>Contact preferences and which contractors you selected</li>
+</ul>
+<p>This information is shared with the contractors you select when you submit a request.</p>
+
+<h2>How We Use Your Information</h2>
+<p>We use collected data for purposes including:</p>
+<ul>
 <li>Creating and managing your account and authentication</li>
-<li>Enabling core features (projects, favorites, saved items, shopping lists)</li>
-<li>Generating AI designs and powering AI tools you request</li>
-<li>Delivering Leads to the contractors you selected when you submit a Lead</li>
-<li>Providing customer support</li>
-<li>Monitoring usage, reliability, and performance</li>
+<li>Providing core features: projects, favorites, shopping lists, checklists, materials, and tutorials</li>
+<li>Generating AI landscape designs from your photos and preferences</li>
+<li>Providing plant identification, plant health diagnosis, and plant search features</li>
+<li>Matching you with local contractors when you request quotes</li>
+<li>Sending project-related push notifications and maintenance reminders</li>
+<li>Personalizing design suggestions based on your region and season</li>
+<li>Processing in-app subscription purchases and verifying entitlements</li>
+<li>Sending transactional emails (welcome, password reset, lead notifications)</li>
+<li>Sending re-engagement notifications</li>
+<li>Improving the Service through aggregated, anonymized analytics</li>
 <li>Detecting, preventing, and addressing technical issues and abuse</li>
-<li>Improving the Service and user experience</li>
 </ul>
 
+<h2>Analytics and Tracking</h2>
+
+<h3>PostHog</h3>
+<p>We use PostHog for behavioral analytics, hosted in the United States. PostHog tracks named in-app events including screen views, design generation, feature usage, checklist actions, lead flow, subscription events, and errors. When you are logged in, your user ID is attached to events; before login, an anonymous ID is used. Events may also be mirrored to an internal Supabase table.</p>
+<p>PII filtering: email addresses, passwords, phone numbers, addresses, full images, GPS coordinates, payment details, and card numbers are stripped before sending to PostHog. ZIP codes are truncated to the first 3 digits before transmission.</p>
+<p>If a consent modal is shown, you may opt out of analytics through that modal.</p>
+
+<h3>Sentry</h3>
+<p>We use Sentry for crash reporting, error monitoring, and performance tracing. Session replay is enabled, with approximately 10% of sessions sampled and 100% of error sessions captured. An optional in-app feedback form allows you to submit your name, email, and a description of an issue; screenshots are disabled in the feedback form. Sentry's configuration may collect additional identifying context per Sentry's documentation. Session and error data is hosted by Sentry.io.</p>
+
+<h3>Website Analytics</h3>
+<p>Our website uses Google Analytics. Our website may also use cookies or similar technologies. You can adjust tracking through your browser settings. Our website may not respond to Do Not Track signals.</p>
+
 <h2>AI Processing</h2>
-<p>The Service includes AI features such as landscape design generation, Yard Nerd chat, and plant tools.</p>
-<p>When you use these features, we may send relevant inputs to our AI provider, such as:</p>
+<p>The Service includes AI features including landscape design generation, the Yard Nerd chat assistant, plant identification, plant health diagnosis, and plant search. When you use these features, relevant inputs are sent to our backend, which uses Google Gemini AI to generate outputs. Inputs may include:</p>
 <ul>
 <li>Photos you upload (encoded for transmission)</li>
-<li>Prompts or questions you enter</li>
+<li>Prompts, questions, or descriptions you enter</li>
 <li>Project preferences (budget, style, features)</li>
 <li>ZIP-derived location context (city and state)</li>
 </ul>
-<p>AI outputs are generated automatically and may be inaccurate, incomplete, or not suitable for your situation. You are responsible for how you use AI outputs.</p>
+<p>User photos sent for AI processing are transmitted securely and outputs are stored in your private project storage. Content submitted for AI generation is subject to Google's usage policies. AI outputs are generated automatically and may be inaccurate, incomplete, or not suitable for your situation. You are responsible for how you use AI outputs, including plant identification results used for health or safety decisions.</p>
 
-<h2>Retention of Data</h2>
-<p>We retain Personal Data and User Content only for as long as necessary to provide the Service and for legitimate business purposes (such as security, dispute resolution, and compliance).</p>
-<p>Usage Data is generally retained for shorter periods, except where it is used to strengthen security, improve functionality, or where we are legally obligated to retain it longer.</p>
-
-<h2>Account Deletion</h2>
-<p>You can delete your account in the app via Account Settings, then Delete Account, then Confirm.</p>
-<p>When you delete your account, we aim to delete:</p>
+<h2>Authentication and Sign-In</h2>
+<p>The Service supports the following sign-in methods, all managed through Supabase Auth:</p>
 <ul>
-<li>Files associated with your account (such as profile photos, favorite images, generated images)</li>
-<li>Associated database records tied to your user ID (such as profile, favorites, shopping lists, subscription records, Leads, and related audit records)</li>
-<li>Your authentication record</li>
+<li><strong>Email and password:</strong> Managed by Supabase Auth. Password reset links are sent by email and redirect to https://landscaipeapp.com/reset-password.html.</li>
+<li><strong>Sign in with Google:</strong> Exchanges a Google ID token with Supabase. Scopes requested are profile and email.</li>
+<li><strong>Sign in with Apple:</strong> Exchanges an Apple ID token with Supabase. Scopes requested are name and email.</li>
 </ul>
-<p><strong>Subscriptions:</strong> Deleting your account does not automatically cancel subscriptions. Subscriptions must be canceled through your Apple App Store or Google Play settings, and access may continue until the end of the billing period.</p>
 
-<h2>Transfer of Data</h2>
-<p>Your information may be transferred to and maintained on servers located outside your state, province, country, or other governmental jurisdiction, where data protection laws may differ.</p>
-<p>By using the Service and submitting information, you consent to such transfers.</p>
+<h2>In-App Purchases and Subscriptions</h2>
+<p>DIY Pro is an auto-renewing subscription available through the Apple App Store (iOS) and Google Play Store (Android). Purchase receipts and transaction tokens are sent to our backend for verification; we do not store raw payment card information. Subscription status is verified server-side and cached locally. Stripe is used for contractor-side billing and is not used for in-app mobile purchases. Deleting your account does not automatically cancel your subscription; subscriptions must be canceled through your Apple App Store or Google Play settings.</p>
 
-<h2>Disclosure of Data</h2>
-
-<h3>Contractors (when you submit a Lead)</h3>
-<p>If you submit a Lead, we disclose the Lead information to the contractors you selected so they can contact you about your request. Contractors are independent third parties, and their privacy practices apply to their handling of your information.</p>
-
-<h3>Service Providers</h3>
-<p>We may share information with Service Providers who help us operate the Service. These providers have access to information only to perform tasks on our behalf and are obligated not to use it for other purposes.</p>
-
-<h3>Business Transaction</h3>
-<p>If we are involved in a merger, acquisition, financing, or asset sale, information may be transferred as part of that transaction. We will provide notice if your Personal Data becomes subject to a different privacy policy.</p>
-
-<h3>Legal Requirements</h3>
-<p>We may disclose information if required to do so by law or in response to valid requests by public authorities (for example, a court or government agency), or to protect rights, safety, and security.</p>
+<h2>Data Sharing with Third Parties</h2>
+<p>We share data with the following third parties as necessary to operate the Service:</p>
+<ul>
+<li><strong>Supabase</strong> - Database, storage, authentication, and edge functions. All user and project data is processed and stored here.</li>
+<li><strong>Google</strong> - Sign-in via OAuth (Google ID token) and AI generation via Google Gemini on the backend. Yard photos and prompts are sent server-side for AI processing.</li>
+<li><strong>Apple</strong> - Sign-in via OAuth (Apple ID token).</li>
+<li><strong>PostHog</strong> - Behavioral analytics. Anonymized usage events and an anonymous or user ID are shared.</li>
+<li><strong>Sentry</strong> - Error reporting, session replay, and optional user feedback. Crash data and session recordings are shared.</li>
+<li><strong>Expo</strong> - Over-the-air app updates and push notification delivery. Push token and app metadata are shared.</li>
+<li><strong>Matched Contractors</strong> - Only when you initiate a quote request. Name, email, phone, ZIP, and project details are shared with the contractors you select.</li>
+<li><strong>Apple App Store and Google Play</strong> - Subscription processing.</li>
+<li><strong>Open-Meteo</strong> - Weather data. ZIP-derived location context is used to fetch weather information.</li>
+</ul>
+<p>We do not sell your personal information. We may also share information in connection with a business transaction (such as a merger, acquisition, or asset sale), in response to legal requirements, or to protect rights, safety, and security.</p>
 
 <h2>Security of Data</h2>
-<p>We use reasonable safeguards designed to protect your information, including encryption in transit (HTTPS) and access controls. However, no method of transmission or storage is 100 percent secure, and we cannot guarantee absolute security.</p>
-<p>We store photos and images in private storage and use signed access where applicable.</p>
+<p>We use reasonable safeguards designed to protect your information, including encryption in transit (HTTPS) and access controls. Photos and images are stored in private storage and accessed via time-limited signed URLs. However, no method of transmission or storage is 100 percent secure, and we cannot guarantee absolute security.</p>
 
-<h2>Do Not Track Signals (Website)</h2>
-<p>Our website may not respond to Do Not Track signals. You can enable or disable Do Not Track by visiting your browser settings.</p>
+<h2>Data Retention and Account Deletion</h2>
+<p>Account data is retained until you delete your account. You can delete your account in the app via Account Settings, then Delete Account, then Confirm. When you delete your account, we delete:</p>
+<ul>
+<li>Files associated with your account (profile photos, project photos, generated images)</li>
+<li>Database records tied to your user ID (profile, projects, favorites, shopping lists, subscription records, Leads, and related records)</li>
+<li>Your authentication record</li>
+<li>Your push notification tokens (flagged inactive on deletion)</li>
+</ul>
+<p>Analytics events are retained per PostHog's and Sentry's respective data retention policies. Usage Data is generally retained for shorter periods, except where needed for security, functionality, or legal compliance.</p>
+<p><strong>Subscriptions:</strong> Deleting your account does not automatically cancel subscriptions. You must cancel through your Apple App Store or Google Play settings. Access may continue until the end of the current billing period.</p>
+
+<h2>Transfer of Data</h2>
+<p>Your information may be transferred to and maintained on servers located outside your state, province, country, or other governmental jurisdiction, where data protection laws may differ. By using the Service and submitting information, you consent to such transfers.</p>
 
 <h2>Your Rights and Choices</h2>
-<p>Depending on where you live, you may have rights to access, correct, delete, or request a copy of your personal information, and to object to or restrict certain processing.</p>
-<p>You can update certain account and profile information within the Service, and you can delete your account in-app. For other requests, contact us using the information below. We may ask you to verify your identity before responding.</p>
-
-<h2>Service Providers</h2>
-<p>We may use third-party Service Providers to operate the Service, including:</p>
+<p>Depending on where you live (including under CCPA and GDPR), you may have the following rights:</p>
 <ul>
-<li>Supabase (authentication, database, storage, edge functions)</li>
-<li>Google Gemini (AI image generation, Yard Nerd chat, plant tools)</li>
-<li>Sentry (crash reporting and diagnostics)</li>
-<li>Open-Meteo (weather data)</li>
-<li>Apple App Store and Google Play (subscription processing)</li>
+<li>Right to access data we hold about you</li>
+<li>Right to correct inaccurate data</li>
+<li>Right to delete your account and associated data</li>
+<li>Right to receive a copy of your personal information</li>
+<li>Right to opt out of analytics (via the in-app consent modal, if shown)</li>
+<li>Right to opt out of marketing email (via the in-app consent modal, if shown)</li>
+<li>Right to opt out of location use (via device permission settings and the consent modal, if shown)</li>
+<li>Right to object to or restrict certain processing</li>
 </ul>
-
-<h2>Payments</h2>
-<p>We may provide paid subscriptions within the Service (for example, a DIY Pro subscription). Payments are processed through Apple App Store or Google Play, and we do not store or collect payment card details.</p>
-<p>We may store subscription-related records such as receipts or tokens, transaction identifiers, and subscription status to verify entitlements and provide subscriber access.</p>
+<p>You can update certain account and profile information within the Service and delete your account in-app. For other requests, contact us using the information below. We may ask you to verify your identity before responding.</p>
 
 <h2>Children's Privacy</h2>
-<p>The Service is a general-audience app focused on home and yard projects and is not directed to children under 13.</p>
-<p>We do not knowingly collect Personal Data from children under 13. If we learn that we have collected Personal Data from a child under 13, we will take steps to delete it. If you are a parent or guardian and believe your child has provided Personal Data, please contact us.</p>
+<p>The Service is not directed to children under 13 (United States) or under 16 (European Union). We do not knowingly collect Personal Data from children under these ages. If we learn that we have collected Personal Data from a child, we will take steps to delete it. If you are a parent or guardian and believe your child has provided Personal Data, please contact us.</p>
 
 <h2>Links to Other Sites</h2>
 <p>The Service may contain links to third-party sites or services that are not operated by us. We are not responsible for the content or privacy practices of third parties.</p>

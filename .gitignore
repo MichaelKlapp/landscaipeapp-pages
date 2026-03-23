@@ -22,6 +22,6 @@ build/
 .next/
 .cache/
 
-# Local uploads (contractor portal)
-contractor-portal/server/uploads/
+# Contractor portal (not ready for main)
+contractor-portal/
 
